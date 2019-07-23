@@ -39,7 +39,7 @@ install:
 - sh: sudo DEBIAN_FRONTEND=noninteractive apt-get --yes --force-yes install rename
 
 build_script:
-- ps: (gc msvc\uuu.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu.vcxproj}
+- ps: (gc msvc\uuu.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu.vcxproj
 - ps: (gc msvc\uuu.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\uuu.vcxproj
 - ps: (gc msvc\bzip2.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\bzip2.vcxproj
 - ps: (gc msvc\bzip2.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\bzip2.vcxproj
