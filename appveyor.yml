@@ -51,11 +51,11 @@ build_script:
 - ps: (gc libusb\msvc\libusb_dll_2017.vcxproj) -replace '141', '142' | Out-File -encoding ASCII libusb\msvc\libusb_dll_2017.vcxproj
 
 
-- cmd: cov-build --dir cov-int msbuild %APPVEYOR_BUILD_FOLDER%/msvc/uuu.sln /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+- cmd: msbuild %APPVEYOR_BUILD_FOLDER%/msvc/uuu.sln /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-- cmd: 7z a -tzip mfg.zip cov-int
+#- cmd: 7z a -tzip mfg.zip cov-int
 
-- cmd: curl --form token=%coverity_token% --form email=frank.li@nxp.com --form file=@mfg.zip --form version="automation test"  --form description="testing coverity automation" https://scan.coverity.com/builds?project=NXPmicro%2Fmfgtools
+#- cmd: curl --form token=%coverity_token% --form email=frank.li@nxp.com --form file=@mfg.zip --form version="automation test"  --form description="testing coverity automation" https://scan.coverity.com/builds?project=NXPmicro%2Fmfgtools
 
 - cmd: git clean -dxf .
 
