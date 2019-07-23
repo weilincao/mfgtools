@@ -6,10 +6,10 @@ image:
 
 configuration: 
 - Debug
-- Release
+#- Release
 
 platform:
- - x86
+#- x86
  - x64
  
 init:
