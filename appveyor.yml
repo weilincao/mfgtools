@@ -40,20 +40,20 @@ install:
 - sh: sudo DEBIAN_FRONTEND=noninteractive apt-get --yes --force-yes install rename
 
 build_script:
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\uuu.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\uuu.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\uuu.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\bzip2.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\bzip2.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\bzip2.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\bzip2.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\libuuu.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\libuuu.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\libuuu.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\libuuu.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\zlib.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\zlib.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\zlib.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\zlib.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc libusb\msvc\libusb_dll_2017.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII libusb\msvc\libusb_dll_2017.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc libusb\msvc\libusb_dll_2017.vcxproj) -replace '141', '142' | Out-File -encoding ASCII libusb\msvc\libusb_dll_2017.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\uuu-static-link.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu-static-link.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\uuu-static-link.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\uuu-static-link.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc libusb\msvc\libusb_static_2017.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII libusb\msvc\libusb_static_2017.vcxproj}
-- ps: If($APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc libusb\msvc\libusb_static_2017.vcxproj) -replace '141', '142' | Out-File -encoding ASCII libusb\msvc\libusb_static_2017.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\uuu.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\uuu.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\uuu.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\bzip2.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\bzip2.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\bzip2.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\bzip2.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\libuuu.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\libuuu.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\libuuu.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\libuuu.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\zlib.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\zlib.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\zlib.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\zlib.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc libusb\msvc\libusb_dll_2017.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII libusb\msvc\libusb_dll_2017.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc libusb\msvc\libusb_dll_2017.vcxproj) -replace '141', '142' | Out-File -encoding ASCII libusb\msvc\libusb_dll_2017.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\uuu-static-link.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu-static-link.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc msvc\uuu-static-link.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\uuu-static-link.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc libusb\msvc\libusb_static_2017.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII libusb\msvc\libusb_static_2017.vcxproj}
+- ps: If($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019")  {(gc libusb\msvc\libusb_static_2017.vcxproj) -replace '141', '142' | Out-File -encoding ASCII libusb\msvc\libusb_static_2017.vcxproj}
 
 
 
