@@ -39,7 +39,7 @@ install:
 - sh: sudo DEBIAN_FRONTEND=noninteractive apt-get --yes --force-yes install rename
 
 build_script:
-- ps: (gc msvc\uuu.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu.vcxproj
+- ps: (gc msvc\uuu.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu.vcxproj}
 - ps: (gc msvc\uuu.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\uuu.vcxproj
 - ps: (gc msvc\bzip2.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\bzip2.vcxproj
 - ps: (gc msvc\bzip2.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\bzip2.vcxproj
@@ -49,6 +49,11 @@ build_script:
 - ps: (gc msvc\zlib.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\zlib.vcxproj
 - ps: (gc libusb\msvc\libusb_dll_2017.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII libusb\msvc\libusb_dll_2017.vcxproj
 - ps: (gc libusb\msvc\libusb_dll_2017.vcxproj) -replace '141', '142' | Out-File -encoding ASCII libusb\msvc\libusb_dll_2017.vcxproj
+- ps: (gc msvc\uuu-static-link.vcxproj) -replace '141', '142' | Out-File -encoding ASCII msvc\uuu-static-link.vcxproj}
+- ps: (gc msvc\uuu-static-link.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII msvc\uuu-static-link.vcxproj
+- ps: (gc libusb\msvc\libusb_static_2017.vcxproj) -replace '10.0.16299.0', '10.0' | Out-File -encoding ASCII libusb\msvc\libusb_static_2017.vcxproj
+- ps: (gc libusb\msvc\libusb_static_2017.vcxproj) -replace '141', '142' | Out-File -encoding ASCII libusb\msvc\libusb_static_2017.vcxproj
+
 
 
 - cmd: msbuild %APPVEYOR_BUILD_FOLDER%/msvc/uuu.sln /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
